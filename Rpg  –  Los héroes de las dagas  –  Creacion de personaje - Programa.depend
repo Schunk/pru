@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1567084514 source:d:\mini laboratorio\popurri\partijuego\fantasy final\5) crear personaje\rpg  –  los héroes de las dagas  –  creacion de personaje - programa\main.cpp
+	<iostream>
+	<cstdlib>
+	<string.h>
+	<cstdio>
+	<cstring>
+	<clocale>
+	"rlutil.h"
+	"administrador.h"
+	"menus.h"
+
+1566949408 d:\mini laboratorio\popurri\partijuego\fantasy final\5) crear personaje\rpg  –  los héroes de las dagas  –  creacion de personaje - programa\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1567046996 d:\mini laboratorio\popurri\partijuego\fantasy final\5) crear personaje\rpg  –  los héroes de las dagas  –  creacion de personaje - programa\administrador.h
+
+1567084526 d:\mini laboratorio\popurri\partijuego\fantasy final\5) crear personaje\rpg  –  los héroes de las dagas  –  creacion de personaje - programa\menus.h
+
+1567104266 source:e:\mini laboratorio\popurri\partijuego\fantasy final\5) crear personaje\rpg  –  los héroes de las dagas  –  creacion de personaje - programa\main.cpp
+	<iostream>
+	<cstdlib>
+	<string.h>
+	<cstdio>
+	<cstring>
+	<clocale>
+	"rlutil.h"
+	"menus.h"
+
+1567104124 e:\mini laboratorio\popurri\partijuego\fantasy final\5) crear personaje\rpg  –  los héroes de las dagas  –  creacion de personaje - programa\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1567107106 e:\mini laboratorio\popurri\partijuego\fantasy final\5) crear personaje\rpg  –  los héroes de las dagas  –  creacion de personaje - programa\menus.h
+
