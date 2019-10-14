@@ -7,10 +7,10 @@ struct secundarias administrar_secundarias(struct principales ficha_pri){
 
     struct secundarias ficha_x;
 
-    ficha_x.vitalidad = ficha_pri.recistencia * 5;
-    ficha_x.estamina = ficha_pri.recistencia * 3 + ficha_pri.destreza * 2;
+    ficha_x.vitalidad = ficha_pri.resistencia * 5;
+    ficha_x.estamina = ficha_pri.resistencia * 3 + ficha_pri.destreza * 2;
     ///Aptitudes fisicas
-    ficha_x.correr = ficha_pri.recistencia * 2 + ficha_pri.destreza * 3;
+    ficha_x.correr = ficha_pri.resistencia * 2 + ficha_pri.destreza * 3;
     ficha_x.esquivar = ficha_pri.destreza * 3 + ficha_pri.suerte * 2;
     ficha_x.parkour = ficha_pri.destreza * 5;
     ///Aptitudes
@@ -29,11 +29,11 @@ struct secundarias administrar_secundarias(struct principales ficha_pri){
     ficha_x.armas_de_precicion = ficha_pri.persepcion * 5;
     ficha_x.arrojables = ficha_pri.fuerza * 2 + ficha_pri.persepcion * 3;
     ///Tolerancias;
-    ficha_x.veneno = ficha_pri.recistencia * 5;
-    ficha_x.enfermedad = ficha_pri.recistencia * 5;
-    ficha_x.hipotermia = ficha_pri.recistencia * 5;
-    ficha_x.quemaduras = ficha_pri.recistencia * 5;
-    ficha_x.alcohol = ficha_pri.recistencia * 5;
+    ficha_x.veneno = ficha_pri.resistencia * 5;
+    ficha_x.enfermedad = ficha_pri.resistencia * 5;
+    ficha_x.hipotermia = ficha_pri.resistencia * 5;
+    ficha_x.quemaduras = ficha_pri.resistencia * 5;
+    ficha_x.alcohol = ficha_pri.resistencia * 5;
     ///Subterfugio;
     ficha_x.robar = ficha_pri.destreza * 2 + ficha_pri.sigilo * 3;
     ficha_x.discrecion = ficha_pri.sigilo * 5;
@@ -53,11 +53,11 @@ void Mostrar_informacion_titulos(){
     cout<< "/t Requisitos:"<< endl;
     cout<< "/t/tFuerza 5+"<< endl;
     cout<< "/t/tDestreza 5+"<< endl;
-    cout<< "/t/tPercepci髇 5+"<< endl;
+    cout<< "/t/tPercepci贸n 5+"<< endl;
     cout<< "/tEfectos:"<< endl;
     cout<< "/t/tArma blanca +10"<< endl;
     cout<< "/t/tArma contundente +5"<< endl;
-    cout<< "/t/tArma de precisi髇 +5"<< endl;
+    cout<< "/t/tArma de precisi贸n +5"<< endl;
     cout<< "------*------"<< endl;
     cout<< "Artista marcial."<< endl;
     cout<< "/tRequisitos:"<< endl;
@@ -74,17 +74,17 @@ void Mostrar_informacion_titulos(){
     cout<< "/t/tSigilo +6"<< endl;
     cout<< "/tEfectos:"<< endl;
     cout<< "/t/tArma blanca +5"<< endl;
-    cout<< "/t/tArma de precisi髇 +5"<< endl;
-    cout<< "/t/tDiscreci髇 +10"<< endl;
+    cout<< "/t/tArma de precisi贸n +5"<< endl;
+    cout<< "/t/tDiscreci贸n +10"<< endl;
     cout<< "------*------"<< endl;
-    cout<< "Ladr髇."<< endl;
+    cout<< "Ladr贸n."<< endl;
     cout<< "/tRequisitos:"<< endl;
     cout<< "/t/tDestreza 4+"<< endl;
     cout<< "/t/tSigilo 4+"<< endl;
     cout<< "/t/tCarisma 4+"<< endl;
     cout<< "/tEfectos:"<< endl;
     cout<< "/t/tRobar +10"<< endl;
-    cout<< "/t/tDiscreci髇 +5"<< endl;
+    cout<< "/t/tDiscreci贸n +5"<< endl;
     cout<< "/t/tElocuencia +5"<< endl;
     cout<< "------*------"<< endl;
     cout<< "Medico."<< endl;
@@ -110,16 +110,16 @@ void Mostrar_informacion_titulos(){
     cout<< "Erudito."<< endl;
     cout<< "/tRequisitos:"<< endl;
     cout<< "/t/tCalculo 5+"<< endl;
-    cout<< "/t/tAbstracci髇 5+"<< endl;
+    cout<< "/t/tAbstracci贸n 5+"<< endl;
     cout<< "/t/tCarisma 5+"<< endl;
     cout<< "/tEfectos:"<< endl;
     cout<< "/t/tHistoria +5"<< endl;
     cout<< "/t/tCultura +5"<< endl;
     cout<< "/t/tElocuencia +10"<< endl;
     cout<< "------*------"<< endl;
-    cout<< "M鷖ico."<< endl;
+    cout<< "M煤sico."<< endl;
     cout<< "/tRequisitos:"<< endl;
-    cout<< "/t/tAbstracci髇 6+"<< endl;
+    cout<< "/t/tAbstracci贸n 6+"<< endl;
     cout<< "/t/tCarisma 6+"<< endl;
     cout<< "/tEfectos:"<< endl;
     cout<< "/t/tCultura +10"<< endl;
@@ -135,7 +135,7 @@ void Mostrar_informacion_titulos(){
     cout<< "Cocinero."<< endl;
     cout<< "/tRequisitos:"<< endl;
     cout<< "/t/tCalculo 8+"<< endl;
-    cout<< "/t/tAbstracci髇 8+"<< endl;
+    cout<< "/t/tAbstracci贸n 8+"<< endl;
     cout<< "/t/tTemplanza 8+"<< endl;
     cout<< "/tEfectos:"<< endl;
     cout<< "/t/tCocina +5"<< endl;
@@ -170,7 +170,7 @@ void Mostrar_ficha_completa(struct caracteristicas ficha_car, struct principales
     cout<< endl<< endl;
 
     cout<< "Stats principales: ";
-    cout<< "Resistencia: "<< ficha_pri.recistencia<< endl;
+    cout<< "Resistencia: "<< ficha_pri.resistencia<< endl;
     cout<< "Fuerza: "<< ficha_pri.fuerza<< endl;
     cout<< "Destreza: "<< ficha_pri.destreza<< endl;
     cout<< "Persepcion: "<< ficha_pri.persepcion<< endl;
@@ -259,7 +259,7 @@ struct caracteristicas Ingresar_caracteristicas(){
 struct principales Menu_admi_principales(){
 
     struct principales ficha_x;
-        ficha_x.recistencia = 0;
+        ficha_x.resistencia = 0;
         ficha_x.fuerza = 0;
         ficha_x.destreza = 0;
         ficha_x.persepcion = 0;
@@ -297,7 +297,7 @@ struct principales Menu_admi_principales(){
 
         /*<Menu de cadenas de caracteres>
 
-        cout<< "Recistencia(RES): "<< ficha_x.recistencia<< endl;
+        cout<< "Resistencia(RES): "<< ficha_x.resistencia<< endl;
         cout<< "Fuerza(FUE): "<< ficha_x.fuerza<< endl;
         cout<< "Destreza(DES): "<< ficha_x.destreza<< endl;
         cout<< "Presepcion(PER): "<< ficha_x.persepcion<< endl;
@@ -309,7 +309,7 @@ struct principales Menu_admi_principales(){
         cout<< "Suerte(SUE): "<< ficha_x.suerte<< endl;
         cout<< "Salir(EXIT)"<< endl<< endl;
 
-        cout<< "Ingresa la clabe de la estadistica que deseas modificar:"<< endl;
+        cout<< "Ingresa la clave de la estadistica que deseas modificar:"<< endl;
         cin>> clave_prin;
 
         cout<< "Ingresa los puntos que gastaras:"<< endl;
@@ -318,8 +318,8 @@ struct principales Menu_admi_principales(){
 
         switch(clave_prin){
             case 'RES':
-                if((ficha_x.recistencia + puntos) >= 0){
-                    ficha_x.recistencia += puntos;
+                if((ficha_x.resistencia + puntos) >= 0){
+                    ficha_x.resistencia += puntos;
                 }
                 else{
                     cout<< "Los principales no pueden ser negativos."<< endl;
@@ -435,7 +435,7 @@ struct principales Menu_admi_principales(){
         }
         */
 
-        cout<< "Recistencia(1): "<< ficha_x.recistencia<< endl;
+        cout<< "Resistencia(1): "<< ficha_x.resistencia<< endl;
         cout<< "Fuerza(2): "<< ficha_x.fuerza<< endl;
         cout<< "Destreza(3): "<< ficha_x.destreza<< endl;
         cout<< "Presepcion(4): "<< ficha_x.persepcion<< endl;
@@ -447,7 +447,7 @@ struct principales Menu_admi_principales(){
         cout<< "Suerte(10): "<< ficha_x.suerte<< endl;
         cout<< "Salir(0)"<< endl<< endl;
 
-        cout<< "Ingresa la clabe de la estadistica que deseas modificar:"<< endl;
+        cout<< "Ingresa la clave de la estadistica que deseas modificar:"<< endl;
         cin>> claves;
 
         cout<< "Ingresa los puntos que gastaras:"<< endl;
@@ -456,8 +456,8 @@ struct principales Menu_admi_principales(){
 
         switch(claves){
             case 1:
-                if((ficha_x.recistencia + puntos) >= 0){
-                    ficha_x.recistencia += puntos;
+                if((ficha_x.resistencia + puntos) >= 0){
+                    ficha_x.resistencia += puntos;
                     puntos_a_repartir -= puntos;
                 }
                 else{
@@ -605,7 +605,7 @@ void Menu_elegir_titulo(struct caracteristicas ficha_car, struct principales fic
             cout<< "3) Asesino."<< endl;
         }
         if((ficha_pri.destreza >= 4) && (ficha_pri.sigilo >= 4) && (ficha_pri.carisma >= 4)){
-            cout<< "4) Ladr髇."<< endl;
+            cout<< "4) Ladr贸n."<< endl;
         }
         if((ficha_pri.destreza >= 4) && (ficha_pri.calculo >= 4) && (ficha_pri.carisma >= 5)){
             cout<< "5) Medico."<< endl;
@@ -617,7 +617,7 @@ void Menu_elegir_titulo(struct caracteristicas ficha_car, struct principales fic
             cout<< "7) Erudito."<< endl;
         }
         if((ficha_pri.abstraccion >= 6) && (ficha_pri.carisma >= 6)){
-            cout<< "8) M鷖ico."<< endl;
+            cout<< "8) M煤sico."<< endl;
         }
         if((ficha_pri.calculo >= 6) && (ficha_pri.carisma >= 6)){
             cout<< "9) Estafador."<< endl;
@@ -683,11 +683,11 @@ void Menu_elegir_titulo(struct caracteristicas ficha_car, struct principales fic
             break;
             case 4:
                 if((ficha_pri.destreza >= 4) && (ficha_pri.sigilo >= 4) && (ficha_pri.carisma >= 4)){
-                    ///4) Ladr髇.
+                    ///4) Ladr贸n.
                     ficha_sec.robar += 10;
                     ficha_sec.discrecion += 5;
                     ficha_sec.elocuencia += 5;
-                    ///ficha_car.titulo = 'Ladr髇';
+                    ///ficha_car.titulo = 'Ladr贸n';
                     key = false;
                 }
                 else{
@@ -743,10 +743,10 @@ void Menu_elegir_titulo(struct caracteristicas ficha_car, struct principales fic
             break;
             case 8:
                 if((ficha_pri.abstraccion >= 6) && (ficha_pri.carisma >= 6)){
-                    ///8) M鷖ico.
+                    ///8) M煤sico.
                     ficha_sec.cultura += 10;
                     ficha_sec.elocuencia += 10;
-                    ///ficha_car.titulo = 'M鷖ico';
+                    ///ficha_car.titulo = 'M煤sico';
                     key = false;
                 }
                 else{
