@@ -1,159 +1,70 @@
-/*Comentarios: */
-
 #include<iostream>
 #include<cstdlib>
 #include<string.h>
 #include <cstdio>
 #include <cstring>
 #include<clocale>
-
+#include<ctime>
 using namespace std;
 
-
-struct caracteristicas{
-    char nombre[30];
-    char descripcion[90];
-    char genero[20];
-    int edad;
-    char titulo[20];
-};
-
-struct principales{
-    int recistencia;
-    int fuerza;
-    int destreza;
-    int persepcion;
-    int calculo;
-    int abstraccion;
-    int carisma;
-    int templanza;
-    int sigilo;
-    int suerte;
-};
-
-struct secundarias{
-    int vitalidad;
-    int estamina;
-    ///Aptitudes fisicas:
-    int correr;
-    int esquivar;
-    int parkour;
-    ///Aptitudes:
-    int medicina;
-    int ingenieria;
-    int cerrajeria;
-    int informatica;
-    int quimica;
-    int historia;
-    int cocina;
-    int cultura;
-    ///Combate:
-    int cuerpo_a_cuerpo;
-    int arma_blanca;
-    int armas_contundentes;
-    int armas_de_precicion;
-    int arrojables;
-    ///Tolerancias:
-    int veneno;
-    int enfermedad;
-    int hipotermia;
-    int quemaduras;
-    int alcohol;
-    ///Subterfugio:
-    int robar;
-    int discrecion;
-    int elocuencia;
-    ///Psicologia:
-    int cordura;
-    int autocontrol;
-};
-
 #include "rlutil.h"
-///#include "administrador.h"
-#include "menus.h"
+using namespace rlutil;
 
-int main (){
+#include"Mapa.h"
+#include"Avatar.h"
+#include"Movimiento.h"
 
-    struct caracteristicas pj_car;
-    struct principales pj_pri;
-    struct secundarias pj_sec;
+int main()
+{
 
-    bool key = true;
+    ///Mapa:
+    MAPA map_game;
 
-    bool flag = true;
-    char opcion;
+    ///Avatar:
+    AVATAR pj;
+    map_game.imprimir_caracter(pj.gets_eje_x_ext(), pj.gets_eje_y_ext(), pj.gets_eje_x_int(), pj.gets_eje_y_int(), pj.gets_caracter());
 
-    cout<< "Bienvenido la editor de fichas de rol."<< endl<< "Espero que los disfruten."<< endl;
-    system("pause");
-    system("cls");
+    ///Menu:
+    char mov;
 
-    while(key){
+    while(true){
 
-        pj_car = Ingresar_caracteristicas();
+        map_game.leer_mapa();
 
-        pj_pri = Menu_admi_principales();
+        cout<< endl<< endl<< endl;
+        cout<< "W) Arriba."<< endl;
+        cout<< "S) Abajo."<< endl;
+        cout<< "A) Izquierda."<< endl;
+        cout<< "D) Derecha."<< endl;
+        cout<< endl;
 
-        pj_sec = administrar_secundarias(pj_pri);
+        cout<< pj.gets_eje_x_ext();
+        cout<< pj.gets_eje_y_ext();
+        cout<< pj.gets_eje_x_int();
+        cout<< pj.gets_eje_y_int();
 
-        Menu_elegir_titulo(pj_car, pj_pri, pj_sec);
+        mov = getch();
 
-        cout<< "Tu ficha se esta armando..."<< endl;
-        system("pause");
-        system("cls");
-        cout<< "0%"<< endl;
-        system("pause");
-        system("cls");
-        cout<< "25%"<< endl;
-        system("pause");
-        system("cls");
-        cout<< "50%"<< endl;
-        system("pause");
-        system("cls");
-        cout<< "75%"<< endl;
-        system("pause");
-        system("cls");
-        cout<< "100%"<< endl;
-        system("pause");
-        system("cls");
-        cout<< "¡¡¡Listo!!!"<< endl;
-        system("pause");
+        system("pause>>NULL");
         system("cls");
 
-        Mostrar_ficha_completa(pj_car, pj_pri, pj_sec);
+        switch(mov){
 
-        system("pause");
-        system("cls");
+            case 'w':
+            case 's':
+            case 'a':
+            case 'd':
+                mover(mov, map_game, pj);
+            break;
 
-        while(flag){
-
-            cout<< "Estas satisfecho con tus deciciones? (S/N)"<< endl;
-            cin>> opcion;
-
-            switch(opcion){
-                case 'S':
-                    key = false;
-                    flag = false;
-                break;
-                case 'N':
-                    flag = false;
-                break;
-                default:
-                    cout<< "Opcion invalida."<< endl;
-                    system("pause");
-                    system("cls");
-                break;
-            }
-
+            default:
+                cout<< "Opcion invalida"<< endl;
+                system("pause>> NULL");
+                system("cls");
+            break;
         }
 
-        flag = true;
-
     }
-
-    cout<< "Gracias por su tiempo."<< endl;
-    cout<< "Si encuentra algun problema comuniqueselo al Jonathan mas cercano."<< endl;
-    system("pause");
-    system("cls");
 
     return 0;
 }
